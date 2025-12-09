@@ -4,6 +4,7 @@ uses crt;
 var
         selesai : boolean;
         pilihan, pilihanDeposit, pilihanWithdraw, pilihanStake, tukarDari, tukarKe, hariStaking, sisaHari, sisaBulan : integer;
+        i, j : integer;
         BTC, ETH, BNB, SOL, USDT, depoAset, WdAset, jumlahTukar, hasilJumlahTukar, jumlahStake, imbalan : real;
         hargaBTC, hargaETH, hargaBNB, hargaSOL, hargaUSDT, asetDolarBTC, asetDolarETH, asetDolarBNB, asetDolarSOL, asetDolarUSDT : real;
         hargaTokenAwal, hargaTokenTujuan, totalAset, hargaUSD : real;
@@ -127,7 +128,23 @@ begin
                                                         4 : SOL := SOL + depoAset;
                                                         5 : USDT := USDT + depoAset;
                                                 end;
+                                                writeln('');
+                                                writeln('Memproses deposit pada aset Anda');
 
+                                                for i:=1 to 3 do
+                                                begin
+                                                        write('Tahap deposit ', i, '/3: ');
+
+                                                        for j:=1 to 10 do
+                                                        begin
+                                                                write('.');
+                                                                delay(100);
+                                                        end;
+                                                        writeln(' SELESAI');
+                                                        delay(100);
+                                                end;
+
+                                                writeln('Proses deposit berhasil!'); delay(100);
                                                 writeln('');
                                                 writeln('===============DEPOSIT SELESAI==============');
                                                 writeln('Anda berhasil deposit ', depoAset:0:2, ' ', namaToken);
@@ -224,6 +241,23 @@ begin
                                                 else
                                                 begin
                                                         totalAset := totalAset - WdAset;
+                                                        writeln('');
+                                                        writeln('Memproses penarikan pada aset Anda');
+
+                                                        for i:=1 to 3 do
+                                                        begin
+                                                                write('Tahap penarikan ', i, '/3: ');
+
+                                                                for j:=1 to 10 do
+                                                                        begin
+                                                                        write('.');
+                                                                        delay(100);
+                                                                end;
+                                                                writeln(' SELESAI');
+                                                                delay(100);
+                                                        end;
+
+                                                        writeln('Proses penarikan berhasil!'); delay(100);
                                                         writeln('');
                                                         writeln('=============PENARIKAN SELESAI=============');
                                                         writeln('Anda berhasil menarik ', WdAset:0:2, ' ', namaToken);
@@ -414,6 +448,24 @@ begin
                                                                 5 : USDT := USDT + hasilJumlahTukar;
                                                         end;
                                                         writeln('');
+                                                        writeln('Memproses penukaran pada aset Anda');
+
+                                                        for i:=1 to 3 do
+                                                        begin
+                                                                write('Tahap penukaran ', i, '/3: ');
+
+                                                                for j:=1 to 10 do
+                                                                        begin
+                                                                        write('.');
+                                                                        delay(100);
+                                                                end;
+                                                                writeln(' SELESAI');
+                                                                delay(100);
+                                                        end;
+
+                                                        writeln('Proses penukaran berhasil!'); delay(100);
+
+                                                        writeln('');
                                                         writeln('===========PENUKARAN BERHASIL===========');
                                                         writeln('Anda berhasil menukar ', jumlahTukar:0:2, ' ', tokenAwal, ' => ', hasilJumlahTukar:0:2, ' ', tokenTujuan);
                                                         writeln('========================================');
@@ -544,16 +596,54 @@ begin
                                                 5 : USDT := USDT - jumlahStake;
                                                 end;
 
+                                                writeln('');
+                                                writeln('Memproses penguncian pada aset Anda');
+
+                                                for i:=1 to 3 do
+                                                begin
+                                                        write('Tahap konfirmasi ', i, '/3: ');
+
+                                                        for j:=1 to 10 do
+                                                        begin
+                                                                write('.');
+                                                                delay(100);
+                                                        end;
+                                                        writeln(' SELESAI');
+                                                        delay(100);
+                                                end;
+
+                                                writeln('Proses penguncian berhasil!'); delay(100);
+
+                                                writeln('');
+                                                writeln('');
+                                                writeln('');
+                                                writeln('Menghitung kalkulasi reward Anda');
+
+                                                for i:=1 to 3 do
+                                                begin
+                                                        write('Tahap kalkulasi ', i, '/3: ');
+
+                                                        for j:=1 to 10 do
+                                                        begin
+                                                                write('.');
+                                                                delay(100);
+                                                        end;
+                                                        writeln(' SELESAI');
+                                                        delay(100);
+                                                end;
+
+                                                writeln('Proses kalkulasi berhasil!'); delay(100);
+
                                                 sisaBulan := hariStaking DIV 30;
                                                 sisaHari := hariStaking MOD 30;
                                                 imbalan := jumlahStake * (0.07 / 365) * hariStaking;
 
                                                 writeln('');
-                                                writeln('==================STAKING BERHASIL=================');
-                                                writeln(jumlahStake:0:2, ' ', namaToken, ' berhasil di-stake');
-                                                writeln('Estimasi penguncian adalah : ', sisaBulan, ' bulan ', sisaHari, ' hari lagi');
-                                                writeln('Perkiraan reward adalah : ', imbalan:0:2, ' ', namaToken, ' setelah ', hariStaking, ' hari');
-                                                writeln('===================================================');
+                                                writeln('==================STAKING BERHASIL================='); delay(100);
+                                                writeln(jumlahStake:0:2, ' ', namaToken, ' berhasil di-stake'); delay(100);
+                                                writeln('Estimasi penguncian adalah : ', sisaBulan, ' bulan ', sisaHari, ' hari lagi'); delay(100);
+                                                writeln('Perkiraan reward adalah : ', imbalan:0:2, ' ', namaToken, ' setelah ', hariStaking, ' hari'); delay(100);
+                                                writeln('==================================================='); delay(500);
                                                 writeln('');
                                                 writeln('');
                                                 writeln('');
