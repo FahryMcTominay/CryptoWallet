@@ -1,4 +1,4 @@
-program repeatUntil;
+program cyptoWallet;
 uses crt;
 
 var
