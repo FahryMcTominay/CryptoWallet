@@ -1,4 +1,4 @@
-program cyptoWallet;
+program TR3X_Wallet;
 uses crt;
 
 var
